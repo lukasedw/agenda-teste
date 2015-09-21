@@ -1,0 +1,14 @@
+#card
+  %h1.title-f
+    Banda #
+    = @admin_category.id
+
+  #notice= notice
+
+  .show
+    %p
+      %strong Nome:
+      = @admin_category.name
+
+    = link_to 'Editar', edit_admin_category_path(@admin_category)
+    = link_to 'Voltar', admin_categories_path

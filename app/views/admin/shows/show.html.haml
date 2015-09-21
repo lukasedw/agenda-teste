@@ -1,0 +1,27 @@
+#card
+  %h1.title-f
+    Banda #
+    = @admin_show.id
+
+  #notice= notice
+
+  .show
+    %p
+      %strong Local:
+      = @admin_show.local
+    %p
+      %strong Data:
+      = @admin_show.date
+    %p
+      %strong Horas:
+      = @admin_show.time
+    %p
+      %strong Descrição:
+      = @admin_show.description
+    %p
+      %strong Banda:
+      = @admin_show.admin_bands.name
+
+    = link_to 'Editar', edit_admin_show_path(@admin_show)
+    = link_to 'Voltar', admin_shows_path
+

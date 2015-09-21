@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: agendamento_development
+test:
+  <<: *default
+  database: agendamento_test
+production:
+  <<: *default
+  database: agendamento_production
+  username: agendamento
+  password: <%= ENV['ZEL_DATABASE_PASSWORD'] %>

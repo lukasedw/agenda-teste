@@ -1,0 +1,13 @@
+%main
+  %section.list.container
+    %h2.title-f= @show.admin_bands.name
+
+    %article
+      .date
+        = @show.date
+        = @show.time
+      .content
+        %span.local= @show.local
+        %p= @show.description
+      .clearfix
+

@@ -1,0 +1,33 @@
+:javascript
+  $(document).ready(function() {
+    $('.menu .title').click(function(e) {
+      $(this).next().slideToggle('slow');
+      $(this).parent().toggleClass('open');
+      e.preventDefault();
+    });
+  });
+
+%aside#sidebar
+  %ul.menu
+    %li
+      .title.category
+        Categorias
+        .box
+      %ul.sub
+        %li= link_to('Nova categoria', new_admin_category_path)
+        %li= link_to('Listar categorias', admin_categories_path)
+    %li
+      .title.band
+        Bandas
+        .box
+      %ul.sub
+        %li= link_to('Nova banda', new_admin_band_path)
+        %li= link_to('Listar bandas', admin_bands_path)
+    %li
+      .title.show
+        Shows
+        .box
+      %ul.sub
+        %li= link_to('Novo show', new_admin_show_path)
+        %li= link_to('Listar shows', admin_shows_path)
+

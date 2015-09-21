@@ -1,0 +1,22 @@
+#card
+  %p#notice= notice
+
+  %h1.title-f Shows
+
+  %table.table-list
+    %thead
+      %tr
+        %th Local
+        %th Data
+        %th Banda
+        %th.actions Ações
+    %tbody
+      - @admin_shows.each do |admin_show|
+        %tr
+          %td= admin_show.local
+          %td= admin_show.date
+          %td= admin_show.admin_bands.name
+          %td.actions
+            = link_to 'Mostrar', admin_show
+            = link_to 'Editar', edit_admin_show_path(admin_show)
+            = link_to 'Excluir', admin_show, method: :delete, data: { confirm: 'Você tem certeza?' }

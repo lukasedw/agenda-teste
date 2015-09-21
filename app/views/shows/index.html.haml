@@ -1,0 +1,16 @@
+%main
+  %section.list.container
+    %h2.title-f Próximos shows
+
+    - @shows.each do |show|
+      %article
+        .date
+          = show.date
+          = show.time
+        .content
+          %span.local= show.local
+          = link_to show.admin_bands.name, show_path(show), class: :title
+          %p= show.description
+          = link_to 'Ver mais', show_path(show), class: :see
+        .clearfix
+

@@ -1,0 +1,13 @@
+= form_for @admin_band, html: { class: 'form' } do |f|
+  -if @admin_band.errors.any?
+    #error_explanation
+      - @admin_band.errors.full_messages.each do |message|
+        %li= message
+
+  .field
+    = f.text_field :name, placeholder: 'Nome', required: true
+  .field
+    = f.collection_select :category_id, Admin::Category.all, :id, :name, required: true
+
+  .actions
+    = f.submit 'Enviar'

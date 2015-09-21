@@ -1,0 +1,18 @@
+#card
+  %p#notice= notice
+
+  %h1.title-f Categorias
+
+  %table.table-list
+    %thead
+      %tr
+        %th Nome
+        %th.actions Ações
+    %tbody
+      - @admin_categories.each do |admin_category|
+        %tr
+          %td= admin_category.name
+          %td.actions
+            = link_to 'Mostrar', admin_category
+            = link_to 'Editar', edit_admin_category_path(admin_category)
+            = link_to 'Excluir', admin_category, method: :delete, data: { confirm: 'Você tem certeza?' }
